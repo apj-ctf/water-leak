@@ -13,7 +13,7 @@ sudo systemctl start apache2
 sudo systemctl enable apache2
 export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMAAA
 export AWS_SECRET_ACCESS_KEY=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
-export AWS_DEFAULT_REGION=us-west-2
+export AWS_DEFAULT_REGION=ap-southeast-2
 echo "<h1>Deployed via Terraform</h1>" | sudo tee /var/www/html/index.html
 EOF
   tags = {
@@ -152,8 +152,8 @@ resource "aws_network_interface" "web-eni" {
   }
 }
 
-resource "aws_s3_bucket" "drip-drip" {
-  bucket        = "${local.resource_prefix.value}-drip-drip"
+resource "aws_s3_bucket" "ctf-web-content" {
+  bucket        = "${local.resource_prefix.value}-ctf-web-content"
   force_destroy = true
 
   tags = {
