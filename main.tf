@@ -154,7 +154,7 @@ resource "aws_network_interface" "web-eni" {
 
 resource "aws_s3_bucket" "ctf-web-content" {
   bucket        = "${local.resource_prefix.value}-ctf-web-content"
-  acl           = "public-read"
+  acl           = "public-read-write"
   block_public_acls = true
   aws_s3_bucket_public_access_block = true
   force_destroy = true
