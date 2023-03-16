@@ -156,6 +156,7 @@ resource "aws_s3_bucket" "ctf-web-content" {
   bucket        = "${local.resource_prefix.value}-ctf-web-content"
   acl           = "public-read"
   block_public_acls = true
+  aws_s3_bucket_public_access_block = true
   force_destroy = true
 
   tags = {
