@@ -154,10 +154,11 @@ resource "aws_network_interface" "web-eni" {
 
 resource "aws_s3_bucket" "ctf-web-content" {
   bucket        = "${local.resource_prefix.value}-ctf-web-content"
+  acl           = "public-read"
   force_destroy = true
 
   tags = {
-    Name        = "${local.resource_prefix.value}-drip-drip"
+    Name        = "${local.resource_prefix.value}-ctf-web-content"
     Environment = local.resource_prefix.value
   }
 }
