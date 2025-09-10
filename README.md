@@ -1,2 +1,2 @@
-# water-leak
-Snyk CTF IaC Challenge
+
+Python app that reads an image file from an GCP cloud bucket and displays it in a browser
